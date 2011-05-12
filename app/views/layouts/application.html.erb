@@ -7,11 +7,20 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
+  <%= link_to "Auto Mantenimiento", root_path %>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+  <div>
+    <% if current_usuario %>
+      <%= current_usuario.email %> | <%= link_to "Sign out", destroy_usuario_session_path %>
+    <% else %>
+      <%= link_to "Sign up", new_usuario_registration_path %> | <%= link_to "Sign in", new_usuario_session_path %>
+    <% end %>
+  </div>
 
-<%= yield %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+  <%= yield %>
 
 </body>
 </html>

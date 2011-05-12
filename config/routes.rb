@@ -1,4 +1,6 @@
 Automan::Application.routes.draw do
+  resources :vehiculos
+
   devise_for :usuarios
 
   get "home/index"

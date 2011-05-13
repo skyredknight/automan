@@ -10,11 +10,13 @@
   <%= link_to "Auto Mantenimiento", root_path %>
 
   <div>
+    <p>
     <% if current_usuario %>
-      <%= current_usuario.email %> | <%= link_to "Sign out", destroy_usuario_session_path %>
+      Usuario: <%= current_usuario.email %> | <%= link_to "Logout", destroy_usuario_session_path %>
     <% else %>
-      <%= link_to "Sign up", new_usuario_registration_path %> | <%= link_to "Sign in", new_usuario_session_path %>
+      <%= link_to "Registrarse", new_usuario_registration_path %> | <%= link_to "Login", new_usuario_session_path %>
     <% end %>
+    </p>
   </div>
 
   <p class="notice"><%= notice %></p>
